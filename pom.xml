@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.walkclass</groupId>
+    <artifactId>office_converter</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Office文档转码服务</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <logback.version>1.2.3</logback.version>
+        <commons-io.version>1.4</commons-io.version>
+        <openoffice-io.version>3.0.1</openoffice-io.version>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.hynnet/jacob -->
+        <dependency>
+            <groupId>com.hynnet</groupId>
+            <artifactId>jacob</artifactId>
+            <version>1.18</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <!-- jodconverter -->
+        <dependency>
+            <groupId>com.artofsolving</groupId>
+            <artifactId>jodconverter</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openoffice</groupId>
+            <artifactId>juh</artifactId>
+            <version>${openoffice-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openoffice</groupId>
+            <artifactId>ridl</artifactId>
+            <version>${openoffice-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openoffice</groupId>
+            <artifactId>unoil</artifactId>
+            <version>${openoffice-io.version}</version>
+        </dependency>
+        <!-- end jodconverter -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+
+        <!-- logback -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://121.40.58.86:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://121.40.58.86:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>maven-aliyun-cn</id>
+            <name>Aliyun Mirror</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>walkclass-nexus</id>
+            <url>http://121.40.58.86:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>walkclass-thirdparty</id>
+            <url>http://121.40.58.86:8081/nexus/content/repositories/thirdparty/</url>
+        </repository>
+        <repository>
+            <id>aliyun-nexus</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>getui-nexus</id>
+            <url>http://mvn.gt.igexin.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </repositories>
+</project>
